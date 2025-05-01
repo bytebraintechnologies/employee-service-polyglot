@@ -18,8 +18,9 @@ const server = http.createServer((req, res) => {
   
   // Handle routes
   if (req.url === '/health') {
+    console.log('Health check requested');
     res.statusCode = 200;
-    res.end(JSON.stringify({ status: 'UP' }));
+    res.end(JSON.stringify({ status: 'UP', service: 'employee-service-clojure-fallback' }));
   } else if (req.url === '/') {
     res.statusCode = 200;
     res.end(JSON.stringify({ message: 'Clojure Service Fallback' }));
