@@ -1,0 +1,3 @@
+@echo off
+echo Starting Node.js fallback server for Clojure service...
+node minimal-server.js

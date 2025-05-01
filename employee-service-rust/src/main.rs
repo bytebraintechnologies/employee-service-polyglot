@@ -39,6 +39,7 @@ async fn main() -> std::io::Result<()> {
             .wrap(cors)
             // Register routes
             .configure(routes::employee_routes::config)
+            .configure(routes::health::config)
             // Root route
             .service(routes::home::home)
     })

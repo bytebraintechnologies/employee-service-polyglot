@@ -1,11 +1,13 @@
 (ns employee-service.logging
-  (:require [taoensso.timbre :as timbre]
-            [taoensso.timbre.appenders.core :as appenders]))
+  (:require [taoensso.timbre :as timbre]))
 
+;; Simplest possible logging setup to avoid any potential issues
 (defn configure-logging []
   (timbre/set-config!
    {:level :info
-    :appenders {:println {:enabled? true}
-                :spit (appenders/spit-appender {:fname "log/employee_service.log"})}
-    :timestamp-opts {:pattern "yyyy-MM-dd HH:mm:ss"}})
-  (timbre/info "Logging configured"))
+    :ns-whitelist []
+    :ns-blacklist []
+    :middleware []
+    :timestamp-opts {:pattern "yyyy-MM-dd HH:mm:ss"}
+    :output-fn timbre/default-output-fn})
+  (timbre/info "Logging initialized"))

@@ -1,0 +1,3 @@
+@echo off
+echo Starting Standalone Employee Service (Clojure)...
+lein run -m employee-service.standalone-server

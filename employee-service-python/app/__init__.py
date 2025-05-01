@@ -15,7 +15,9 @@ def create_app():
     
     # Register blueprints
     from app.routes.employee_routes import employee_bp
+    from app.routes.health_routes import health_bp
     app.register_blueprint(employee_bp, url_prefix='/api/employees')
+    app.register_blueprint(health_bp, url_prefix='/health')
     
     # Home route
     @app.route('/')

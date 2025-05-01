@@ -104,10 +104,9 @@
         (response/internal-server-error {:message "Error deleting employee" 
                                         :error (.getMessage e)}))))
   
-  ;; Health check
+  ;; Health check - simplest possible implementation
   (GET "/health" []
-    (timbre/info "Health check requested")
-    (response/ok {:status "UP" :service "Employee Service Clojure"}))
+    (response/ok {:status "UP"}))
   
   ;; Not found handler
   (route/not-found "Not Found"))

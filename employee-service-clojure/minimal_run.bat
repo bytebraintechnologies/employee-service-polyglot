@@ -1,0 +1,3 @@
+@echo off
+echo Starting Employee Service (Clojure) - Minimal Version...
+lein ring server-headless 8087

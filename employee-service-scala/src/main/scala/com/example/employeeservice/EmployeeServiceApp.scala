@@ -5,6 +5,7 @@ import akka.actor.typed.scaladsl.Behaviors
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Route
 import com.example.employeeservice.controller.EmployeeController
+import com.example.employeeservice.controller.health.HealthController
 import com.example.employeeservice.repository.EmployeeRepository
 import com.example.employeeservice.service.EmployeeService
 import com.typesafe.config.ConfigFactory
@@ -31,9 +32,10 @@ object EmployeeServiceApp extends App with LazyLogging {
   val repository = new EmployeeRepository()
   val service = new EmployeeService(repository)
   val controller = new EmployeeController(service)
+  val healthController = new HealthController()
   
   // Start HTTP server
-  val routes: Route = controller.routes
+  val routes: Route = controller.routes ~ healthController.routes
   val serverBinding: Future[Http.ServerBinding] = Http().newServerAt(interface, port).bind(routes)
   
   serverBinding.onComplete {

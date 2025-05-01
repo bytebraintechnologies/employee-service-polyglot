@@ -33,8 +33,9 @@ func main() {
 
 	// Register routes
 	routes.SetupEmployeeRoutes(router)
+	routes.SetupHealthRoutes(router)
 
-	// Add health check route
+	// Add welcome route
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "Welcome to Employee Service API",

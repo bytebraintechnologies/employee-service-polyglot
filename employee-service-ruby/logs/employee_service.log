@@ -9,3 +9,34 @@
 [2025-05-01 09:50:42] INFO: Retrieved 5 employees successfully
 [2025-05-01 09:51:16] INFO: Initialized in-memory employee database with sample data
 [2025-05-01 09:51:16] INFO: Employee Service Ruby started on http://localhost:8085
+[2025-05-01 10:36:23] INFO: Initialized in-memory employee database with sample data
+[2025-05-01 10:36:23] INFO: Employee Service Ruby started on http://localhost:8085
+[2025-05-01 10:36:32] INFO: GET /health
+[2025-05-01 10:36:32] INFO: Health check request served
+[2025-05-01 10:36:46] INFO: GET /health
+[2025-05-01 10:36:46] INFO: Health check request served
+[2025-05-01 10:36:56] INFO: GET /api/employees
+[2025-05-01 10:36:56] INFO: Request to get all employees
+[2025-05-01 10:36:56] INFO: Retrieved 5 employees successfully
+[2025-05-01 10:36:57] INFO: GET /api/employees/1
+[2025-05-01 10:36:57] INFO: Request to get employee with ID: 1
+[2025-05-01 10:36:57] INFO: Retrieved employee with ID: 1 successfully
+[2025-05-01 10:36:58] INFO: OPTIONS /api/employees
+[2025-05-01 10:36:59] INFO: POST /api/employees
+[2025-05-01 10:36:59] INFO: Request to create new employee
+[2025-05-01 10:36:59] WARN: Failed to create employee: Missing required fields
+[2025-05-01 10:37:01] INFO: GET /api/employees
+[2025-05-01 10:37:01] INFO: Request to get all employees
+[2025-05-01 10:37:01] INFO: Retrieved 5 employees successfully
+[2025-05-01 10:37:01] INFO: OPTIONS /api/employees/1
+[2025-05-01 10:37:01] INFO: PUT /api/employees/1
+[2025-05-01 10:37:01] INFO: Request to update employee with ID: 1
+[2025-05-01 10:37:01] INFO: Successfully updated employee with ID: 1
+[2025-05-01 10:37:01] INFO: Employee with ID: 1 updated successfully
+[2025-05-01 10:37:04] INFO: OPTIONS /api/employees
+[2025-05-01 10:37:04] INFO: POST /api/employees
+[2025-05-01 10:37:04] INFO: Request to create new employee
+[2025-05-01 10:37:04] WARN: Failed to create employee: Missing required fields
+[2025-05-01 10:37:07] INFO: GET /api/employees
+[2025-05-01 10:37:07] INFO: Request to get all employees
+[2025-05-01 10:37:07] INFO: Retrieved 5 employees successfully

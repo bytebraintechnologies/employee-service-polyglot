@@ -79,7 +79,29 @@ end
 # Health check endpoint
 get '/health' do
   content_type :json
-  MultiJson.dump({ status: 'UP', service: 'Employee Service Ruby' })
+  require 'rbconfig'
+  require 'json'
+  require 'etc'
+
+  health_data = {
+    status: 'UP',
+    service: 'employee-service-ruby',
+    time: Time.now.iso8601,
+    system: {
+      ruby_version: RUBY_VERSION,
+      ruby_platform: RUBY_PLATFORM,
+      ruby_engine: RUBY_ENGINE,
+      os: RbConfig::CONFIG['host_os']
+    },
+    resources: {
+      pid: Process.pid,
+      uptime: Process.clock_gettime(Process::CLOCK_MONOTONIC),
+      cpu_count: Etc.nprocessors
+    }
+  }
+
+  Logger.info("Health check request served")
+  MultiJson.dump(health_data)
 end
 
 # Startup message

@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace EmployeeService.Controllers
 {
@@ -13,15 +15,36 @@ namespace EmployeeService.Controllers
             _logger = logger;
         }
 
-        /// <summary>
-        /// Health check endpoint
-        /// </summary>
-        /// <returns>Health status</returns>
         [HttpGet]
         public IActionResult Get()
         {
             _logger.LogInformation("Health check requested");
-            return Ok(new { Status = "UP", Service = "Employee Service C#/.NET" });
+
+            var process = Process.GetCurrentProcess();
+            var healthData = new
+            {
+                Status = "UP",
+                Service = "employee-service-csharp",
+                Time = DateTime.UtcNow,
+                System = new
+                {
+                    OSDescription = RuntimeInformation.OSDescription,
+                    FrameworkDescription = RuntimeInformation.FrameworkDescription,
+                    ProcessArchitecture = RuntimeInformation.ProcessArchitecture.ToString(),
+                    OSArchitecture = RuntimeInformation.OSArchitecture.ToString()
+                },
+                Resources = new
+                {
+                    ProcessId = process.Id,
+                    ProcessName = process.ProcessName,
+                    WorkingSet64 = process.WorkingSet64,
+                    VirtualMemorySize64 = process.VirtualMemorySize64,
+                    ProcessorCount = Environment.ProcessorCount,
+                    TotalMemory = GC.GetTotalMemory(false)
+                }
+            };
+
+            return Ok(healthData);
         }
     }
 }

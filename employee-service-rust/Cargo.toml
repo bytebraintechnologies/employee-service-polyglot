@@ -32,6 +32,10 @@ regex = "1.8.1"
 # Environment variables
 dotenv = "0.15.0"
 
+# System information
+sys-info = "0.9.1"
+chrono = "0.4.24"
+
 # Error handling
 thiserror = "1.0.40"
 anyhow = "1.0.71"

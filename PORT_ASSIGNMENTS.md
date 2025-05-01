@@ -14,6 +14,8 @@ This document provides the port assignments for the different implementations of
 | Ruby           | 8085 | http://localhost:8085    | Available   |
 | C#/.NET        | 8086 | http://localhost:8086    | Available   |
 | Clojure        | 8087 | http://localhost:8087    | Available   |
+| Go             | 7070 | http://localhost:7070    | Available   |
+| Scala          | 8089 | http://localhost:8089    | Available   |
 
 ## Running Multiple Services
 

@@ -14,4 +14,7 @@ public:
 private:
     // Configure employee routes
     static void configureEmployeeRoutes(crow::App<crow::CORSHandler>& app);
+    
+    // Configure health routes
+    static void configureHealthRoutes(crow::App<crow::CORSHandler>& app);
 };

@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const logger = require('./config/logger');
 const employeeRoutes = require('./routes/employee.routes');
+const healthRoutes = require('./routes/health.routes');
 
 // Create Express app
 const app = express();
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/api/employees', employeeRoutes);
+app.use('/health', healthRoutes);
 
 // Root route
 app.get('/', (req, res) => {

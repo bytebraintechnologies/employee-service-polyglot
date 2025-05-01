@@ -27,10 +27,10 @@ const BACKENDS = [
     apiEndpoint: '/api/employees'
   },
   { 
-    id: 'rust', 
-    name: 'Rust', 
-    port: 8083, 
-    icon: '🦀',
+    id: 'go', 
+    name: 'Go (Gin)', 
+    port: 7070, 
+    icon: '🦫',
     healthEndpoint: '/health',
     apiEndpoint: '/api/employees'
   },
@@ -39,6 +39,14 @@ const BACKENDS = [
     name: 'C++', 
     port: 8084, 
     icon: '⚙️',
+    healthEndpoint: '/health',
+    apiEndpoint: '/api/employees'
+  },
+  { 
+    id: 'rust', 
+    name: 'Rust', 
+    port: 8083, 
+    icon: '🦀',
     healthEndpoint: '/health',
     apiEndpoint: '/api/employees'
   },
@@ -63,6 +71,14 @@ const BACKENDS = [
     name: 'Clojure', 
     port: 8087, 
     icon: '🔄',
+    healthEndpoint: '/health',
+    apiEndpoint: '/api/employees'
+  },
+  { 
+    id: 'scala', 
+    name: 'Scala (Akka)', 
+    port: 8089, 
+    icon: '🔥',
     healthEndpoint: '/health',
     apiEndpoint: '/api/employees'
   }
