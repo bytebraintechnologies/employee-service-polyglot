@@ -15,13 +15,24 @@ class ApiService {
    */
   async checkHealth(hostname, port, healthEndpoint) {
     try {
-      const baseUrl = `http://${hostname}:${port}`;
-      const response = await axios.get(`${baseUrl}${healthEndpoint}`, {
+      // Make sure we don't duplicate the http:// if it's already included
+      let baseUrl;
+      if (typeof hostname === 'string' && hostname.startsWith('http://')) {
+        baseUrl = hostname;
+      } else {
+        baseUrl = `http://${hostname}:${port}`;
+      }
+      
+      // Make sure healthEndpoint exists and starts with a slash
+      const endpoint = healthEndpoint || '/health';
+      const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+      
+      const response = await axios.get(`${baseUrl}${cleanEndpoint}`, {
         timeout: API_TIMEOUT // Timeout for health checks
       });
       return response.status >= 200 && response.status < 300;
     } catch (error) {
-      console.error(`Health check failed for ${hostname}:${port}: ${error.message}`);
+      console.error(`Health check failed for ${hostname}:${port}${healthEndpoint || '/health'}: ${error.message}`);
       return false;
     }
   }
@@ -36,8 +47,19 @@ class ApiService {
   async getAllEmployees(hostname, port, apiEndpoint) {
     const startTime = new Date();
     try {
-      const baseUrl = `http://${hostname}:${port}`;
-      const response = await axios.get(`${baseUrl}${apiEndpoint}`);
+      // Make sure we don't duplicate the http:// if it's already included
+      let baseUrl;
+      if (typeof hostname === 'string' && hostname.startsWith('http://')) {
+        baseUrl = hostname;
+      } else {
+        baseUrl = `http://${hostname}:${port}`;
+      }
+      
+      // Make sure apiEndpoint exists and starts with a slash
+      const endpoint = apiEndpoint || '/api/employees';
+      const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+      
+      const response = await axios.get(`${baseUrl}${cleanEndpoint}`);
       const endTime = new Date();
       return {
         data: response.data,
@@ -66,8 +88,19 @@ class ApiService {
   async getEmployeeById(hostname, port, apiEndpoint, id) {
     const startTime = new Date();
     try {
-      const baseUrl = `http://${hostname}:${port}`;
-      const response = await axios.get(`${baseUrl}${apiEndpoint}/${id}`);
+      // Make sure we don't duplicate the http:// if it's already included
+      let baseUrl;
+      if (typeof hostname === 'string' && hostname.startsWith('http://')) {
+        baseUrl = hostname;
+      } else {
+        baseUrl = `http://${hostname}:${port}`;
+      }
+      
+      // Make sure apiEndpoint exists and starts with a slash
+      const endpoint = apiEndpoint || '/api/employees';
+      const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+      
+      const response = await axios.get(`${baseUrl}${cleanEndpoint}/${id}`);
       const endTime = new Date();
       return {
         data: response.data,
@@ -96,8 +129,19 @@ class ApiService {
   async createEmployee(hostname, port, apiEndpoint, employee) {
     const startTime = new Date();
     try {
-      const baseUrl = `http://${hostname}:${port}`;
-      const response = await axios.post(`${baseUrl}${apiEndpoint}`, employee);
+      // Make sure we don't duplicate the http:// if it's already included
+      let baseUrl;
+      if (typeof hostname === 'string' && hostname.startsWith('http://')) {
+        baseUrl = hostname;
+      } else {
+        baseUrl = `http://${hostname}:${port}`;
+      }
+      
+      // Make sure apiEndpoint exists and starts with a slash
+      const endpoint = apiEndpoint || '/api/employees';
+      const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+      
+      const response = await axios.post(`${baseUrl}${cleanEndpoint}`, employee);
       const endTime = new Date();
       return {
         data: response.data,
@@ -127,8 +171,19 @@ class ApiService {
   async updateEmployee(hostname, port, apiEndpoint, id, employee) {
     const startTime = new Date();
     try {
-      const baseUrl = `http://${hostname}:${port}`;
-      const response = await axios.put(`${baseUrl}${apiEndpoint}/${id}`, employee);
+      // Make sure we don't duplicate the http:// if it's already included
+      let baseUrl;
+      if (typeof hostname === 'string' && hostname.startsWith('http://')) {
+        baseUrl = hostname;
+      } else {
+        baseUrl = `http://${hostname}:${port}`;
+      }
+      
+      // Make sure apiEndpoint exists and starts with a slash
+      const endpoint = apiEndpoint || '/api/employees';
+      const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+      
+      const response = await axios.put(`${baseUrl}${cleanEndpoint}/${id}`, employee);
       const endTime = new Date();
       return {
         data: response.data,
@@ -157,8 +212,19 @@ class ApiService {
   async deleteEmployee(hostname, port, apiEndpoint, id) {
     const startTime = new Date();
     try {
-      const baseUrl = `http://${hostname}:${port}`;
-      const response = await axios.delete(`${baseUrl}${apiEndpoint}/${id}`);
+      // Make sure we don't duplicate the http:// if it's already included
+      let baseUrl;
+      if (typeof hostname === 'string' && hostname.startsWith('http://')) {
+        baseUrl = hostname;
+      } else {
+        baseUrl = `http://${hostname}:${port}`;
+      }
+      
+      // Make sure apiEndpoint exists and starts with a slash
+      const endpoint = apiEndpoint || '/api/employees';
+      const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+      
+      const response = await axios.delete(`${baseUrl}${cleanEndpoint}/${id}`);
       const endTime = new Date();
       return {
         data: response.data,
