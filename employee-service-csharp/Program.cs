@@ -32,7 +32,7 @@ builder.Services.AddCors(options =>
 });
 
 // Configure port
-builder.WebHost.UseUrls("http://localhost:8086");
+builder.WebHost.UseUrls("http://0.0.0.0:8086");
 
 var app = builder.Build();
 
@@ -47,6 +47,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Log startup
-Log.Information("Employee Service C#/.NET started on http://localhost:8086");
+Log.Information("Employee Service C#/.NET started on http://0.0.0.0:8086");
 
 app.Run();
