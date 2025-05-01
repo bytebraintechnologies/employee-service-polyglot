@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "e90a9a3b-53a7-4f4b-9c6c-7d52e7e9f123",
+    "name": "Employee Service Rust API",
+    "description": "A collection for testing the Employee Service API implemented in Rust",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Home",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8083/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8083",
+          "path": [""]
+        },
+        "description": "Get the welcome message from the API"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Employees",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8083/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8083",
+          "path": ["api", "employees"]
+        },
+        "description": "Get a list of all employees"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Employee by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8083/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8083",
+          "path": ["api", "employees", "1"]
+        },
+        "description": "Get an employee by their ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Employee",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8083/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8083",
+          "path": ["api", "employees"]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"first_name\": \"Robert\",\n    \"last_name\": \"Johnson\",\n    \"email\": \"robert.johnson@example.com\",\n    \"department\": \"Engineering\",\n    \"salary\": 80000.0\n}"
+        },
+        "description": "Create a new employee"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Employee",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:8083/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8083",
+          "path": ["api", "employees", "1"]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"department\": \"Management\",\n    \"salary\": 85000.0\n}"
+        },
+        "description": "Update an existing employee"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Employee",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8083/api/employees/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8083",
+          "path": ["api", "employees", "2"]
+        },
+        "description": "Delete an employee"
+      },
+      "response": []
+    }
+  ]
+}

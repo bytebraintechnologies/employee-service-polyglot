@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "b7e9c984-6f3d-7a8f-9f35-89f9cb5e5873",
+		"name": "Employee Service Go API",
+		"description": "A collection for testing the Employee Service CRUD operations with Go",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"api",
+						"employees"
+					]
+				},
+				"description": "Retrieve all employees from the database"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/api/employees/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"api",
+						"employees",
+						"1"
+					]
+				},
+				"description": "Retrieve a specific employee by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Robert\",\n    \"lastName\": \"Johnson\",\n    \"email\": \"robert.johnson@example.com\",\n    \"department\": \"Engineering\",\n    \"salary\": 78000.0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7070/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"api",
+						"employees"
+					]
+				},
+				"description": "Create a new employee"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Robert\",\n    \"lastName\": \"Johnson\",\n    \"email\": \"robert.johnson.updated@example.com\",\n    \"department\": \"Research\",\n    \"salary\": 82000.0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7070/api/employees/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"api",
+						"employees",
+						"1"
+					]
+				},
+				"description": "Update an existing employee"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/api/employees/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"api",
+						"employees",
+						"1"
+					]
+				},
+				"description": "Delete an employee by ID"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,47 @@
+cmake_minimum_required(VERSION 3.14)
+project(employee_service_cpp VERSION 0.1.0)
+
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Include directories
+include_directories(include)
+include_directories(${CMAKE_SOURCE_DIR}/external/include)
+
+# Source files
+file(GLOB_RECURSE SRC_FILES 
+    "src/*.cpp"
+)
+
+# Create executable
+add_executable(${PROJECT_NAME} ${SRC_FILES})
+
+# Add compiler options
+if(MSVC)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4)
+else()
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+# Link libraries if you have them installed locally
+# Note: This is a simplified version - you'd need to specify the paths to these libraries
+if(WIN32)
+    # For Windows, specify the paths to your libraries
+    target_link_libraries(${PROJECT_NAME} PRIVATE 
+        # Adjust these paths to where you have the libraries installed
+        # ${CMAKE_SOURCE_DIR}/external/lib/nlohmann_json.lib
+        # ${CMAKE_SOURCE_DIR}/external/lib/crow.lib
+    )
+else()
+    # For Linux/Mac
+    target_link_libraries(${PROJECT_NAME} PRIVATE 
+        # nlohmann_json
+        # crow
+    )
+endif()
+
+# Installation
+install(TARGETS ${PROJECT_NAME}
+    RUNTIME DESTINATION bin
+)
