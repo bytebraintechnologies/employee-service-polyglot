@@ -1,0 +1,3 @@
+@echo off
+echo Running tests for Backend Health Dashboard...
+npm test
