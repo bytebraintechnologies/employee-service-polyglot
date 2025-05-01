@@ -13,12 +13,13 @@ class ApiService {
    */
   async checkHealth(baseUrl, healthEndpoint) {
     try {
+      // Just use the URL directly - it already has the http:// prefix
       const response = await axios.get(`${baseUrl}${healthEndpoint}`, {
         timeout: API_TIMEOUT // Timeout for health checks
       });
       return response.status >= 200 && response.status < 300;
     } catch (error) {
-      console.error(`Health check failed for ${baseUrl}: ${error.message}`);
+      console.error(`Health check failed for ${baseUrl}${healthEndpoint}: ${error.message}`);
       return false;
     }
   }
