@@ -27,7 +27,7 @@ func main() {
 	// Add middleware
 	router.Use(gin.Recovery())
 	router.Use(utils.LoggerMiddleware())
-	
+
 	// Configure CORS
 	router.Use(cors.Default())
 
@@ -45,7 +45,7 @@ func main() {
 	// Get the port from the environment or use default
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "7070"  // Changed default port to 7070
+		port = "8088"  // Changed default port to 8088
 	}
 
 	// Start the server

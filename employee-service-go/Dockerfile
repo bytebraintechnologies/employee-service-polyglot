@@ -23,7 +23,7 @@ WORKDIR /app
 COPY --from=build /app/employee-service-go .
 
 # Environment variables
-ENV PORT=7070
+ENV PORT=8088
 
 # Expose port
 EXPOSE ${PORT}

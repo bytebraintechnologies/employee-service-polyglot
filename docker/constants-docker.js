@@ -33,7 +33,7 @@ const BACKENDS = [
   { 
     id: 'go', 
     name: 'Go (Gin)', 
-    port: 7070,
+    port: 8088,
     hostname: 'go-service', 
     icon: '🦫',
     healthEndpoint: '/health',

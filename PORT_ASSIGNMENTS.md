@@ -6,15 +6,15 @@ This document provides the port assignments for the different implementations of
 
 | Implementation | Port | Base URL                 | Status      |
 |----------------|------|--------------------------|-------------|
-| Java           | 8080 | http://localhost:8080    | Not created |
-| Node.js        | 8081 | http://localhost:8081    | Not created |
+| Java           | 8080 | http://localhost:8080    | Available   |
+| Node.js        | 8081 | http://localhost:8081    | Available   |
 | Python         | 8082 | http://localhost:8082    | Available   |
 | Rust           | 8083 | http://localhost:8083    | Available   |
 | C++            | 8084 | http://localhost:8084    | Available   |
 | Ruby           | 8085 | http://localhost:8085    | Available   |
 | C#/.NET        | 8086 | http://localhost:8086    | Available   |
 | Clojure        | 8087 | http://localhost:8087    | Available   |
-| Go             | 7070 | http://localhost:7070    | Available   |
+| Go             | 8088 | http://localhost:8088    | Available   |
 | Scala          | 8089 | http://localhost:8089    | Available   |
 
 ## Running Multiple Services
