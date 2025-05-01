@@ -1,0 +1,198 @@
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\health\HealthController.scala:8:8: not found: object spray[0m
+[0m[[0m[31merror[0m] [0m[0mimport spray.json._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:3:8: not found: object spray[0m
+[0m[[0m[31merror[0m] [0m[0mimport spray.json._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:8:28: not found: type DefaultJsonProtocol[0m
+[0m[[0m[31merror[0m] [0m[0mobject JsonFormats extends DefaultJsonProtocol {[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\health\HealthController.scala:6:27: object marshallers is not a member of package akka.http.scaladsl[0m
+[0m[[0m[31merror[0m] [0m[0mimport akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\health\HealthController.scala:19:49: not found: type SprayJsonSupport[0m
+[0m[[0m[31merror[0m] [0m[0mclass HealthController extends LazyLogging with SprayJsonSupport {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:38:41: value ~ is not a member of akka.http.scaladsl.server.Route[0m
+[0m[[0m[31merror[0m] [0m[0m  val routes: Route = controller.routes ~ healthController.routes[0m
+[0m[[0m[31merror[0m] [0m[0m                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:59:7: not found: value EmployeeRequest[0m
+[0m[[0m[31merror[0m] [0m[0m      EmployeeRequest([0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:60:9: not found: value firstName[0m
+[0m[[0m[31merror[0m] [0m[0m        firstName = "John",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:61:9: not found: value lastName[0m
+[0m[[0m[31merror[0m] [0m[0m        lastName = "Doe",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:62:9: not found: value email[0m
+[0m[[0m[31merror[0m] [0m[0m        email = "john.doe@example.com",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:63:9: not found: value phone[0m
+[0m[[0m[31merror[0m] [0m[0m        phone = Some("555-123-4567"),[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:64:9: not found: value position[0m
+[0m[[0m[31merror[0m] [0m[0m        position = "Software Engineer",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:65:9: not found: value department[0m
+[0m[[0m[31merror[0m] [0m[0m        department = "Engineering",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:66:9: not found: value salary[0m
+[0m[[0m[31merror[0m] [0m[0m        salary = BigDecimal("85000.00"),[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:67:9: not found: value hireDate[0m
+[0m[[0m[31merror[0m] [0m[0m        hireDate = Some(LocalDate.of(2020, 3, 15))[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:69:7: not found: value EmployeeRequest[0m
+[0m[[0m[31merror[0m] [0m[0m      EmployeeRequest([0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:70:9: not found: value firstName[0m
+[0m[[0m[31merror[0m] [0m[0m        firstName = "Jane",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:71:9: not found: value lastName[0m
+[0m[[0m[31merror[0m] [0m[0m        lastName = "Smith",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:72:9: not found: value email[0m
+[0m[[0m[31merror[0m] [0m[0m        email = "jane.smith@example.com",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:73:9: not found: value phone[0m
+[0m[[0m[31merror[0m] [0m[0m        phone = Some("555-987-6543"),[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:74:9: not found: value position[0m
+[0m[[0m[31merror[0m] [0m[0m        position = "Product Manager",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:75:9: not found: value department[0m
+[0m[[0m[31merror[0m] [0m[0m        department = "Product",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:76:9: not found: value salary[0m
+[0m[[0m[31merror[0m] [0m[0m        salary = BigDecimal("95000.00"),[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:77:9: not found: value hireDate[0m
+[0m[[0m[31merror[0m] [0m[0m        hireDate = Some(LocalDate.of(2019, 7, 10))[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:79:7: not found: value EmployeeRequest[0m
+[0m[[0m[31merror[0m] [0m[0m      EmployeeRequest([0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:80:9: not found: value firstName[0m
+[0m[[0m[31merror[0m] [0m[0m        firstName = "Michael",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:81:9: not found: value lastName[0m
+[0m[[0m[31merror[0m] [0m[0m        lastName = "Johnson",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:82:9: not found: value email[0m
+[0m[[0m[31merror[0m] [0m[0m        email = "michael.johnson@example.com",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:83:9: not found: value phone[0m
+[0m[[0m[31merror[0m] [0m[0m        phone = Some("555-234-5678"),[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:84:9: not found: value position[0m
+[0m[[0m[31merror[0m] [0m[0m        position = "UX Designer",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:85:9: not found: value department[0m
+[0m[[0m[31merror[0m] [0m[0m        department = "Design",[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:86:9: not found: value salary[0m
+[0m[[0m[31merror[0m] [0m[0m        salary = BigDecimal("78000.00"),[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\EmployeeServiceApp.scala:87:9: not found: value hireDate[0m
+[0m[[0m[31merror[0m] [0m[0m        hireDate = Some(LocalDate.of(2021, 1, 5))[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:11:41: not found: type JsonFormat[0m
+[0m[[0m[31merror[0m] [0m[0m  implicit object AnyJsonFormat extends JsonFormat[Any] {[0m
+[0m[[0m[31merror[0m] [0m[0m                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:12:24: not found: type JsValue[0m
+[0m[[0m[31merror[0m] [0m[0m    def write(x: Any): JsValue = x match {[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:13:22: not found: value JsNumber[0m
+[0m[[0m[31merror[0m] [0m[0m      case n: Int => JsNumber(n)[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:14:23: not found: value JsNumber[0m
+[0m[[0m[31merror[0m] [0m[0m      case n: Long => JsNumber(n)[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:15:25: not found: value JsNumber[0m
+[0m[[0m[31merror[0m] [0m[0m      case n: Double => JsNumber(n)[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:16:29: not found: value JsNumber[0m
+[0m[[0m[31merror[0m] [0m[0m      case n: BigDecimal => JsNumber(n)[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:17:25: not found: value JsString[0m
+[0m[[0m[31merror[0m] [0m[0m      case s: String => JsString(s)[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:18:31: not found: value JsTrue[0m
+[0m[[0m[31merror[0m] [0m[0m      case b: Boolean if b => JsTrue[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:19:32: not found: value JsFalse[0m
+[0m[[0m[31merror[0m] [0m[0m      case b: Boolean if !b => JsFalse[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:44:27: not found: type RootJsonFormat[0m
+[0m[[0m[31merror[0m] [0m[0m  implicit val mapFormat: RootJsonFormat[Map[String, Any]] = new RootJsonFormat[Map[String, Any]] {[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:21:25: not found: value JsArray[0m
+[0m[[0m[31merror[0m] [0m[0m      case l: Seq[_] => JsArray(l.map(write).toVector)[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:22:26: not found: value JsArray[0m
+[0m[[0m[31merror[0m] [0m[0m      case l: List[_] => JsArray(l.map(write).toVector)[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:23:27: not found: value JsArray[0m
+[0m[[0m[31merror[0m] [0m[0m      case a: Array[_] => JsArray(a.map(write).toVector)[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:26:22: not found: value JsNull[0m
+[0m[[0m[31merror[0m] [0m[0m        case None => JsNull[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:28:20: not found: value JsNull[0m
+[0m[[0m[31merror[0m] [0m[0m      case null => JsNull[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:29:17: not found: value JsString[0m
+[0m[[0m[31merror[0m] [0m[0m      case x => JsString(x.toString)[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:32:21: not found: type JsValue[0m
+[0m[[0m[31merror[0m] [0m[0m    def read(value: JsValue): Any = value match {[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:33:12: not found: value JsNumber[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsNumber(n) => n[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:34:12: not found: value JsString[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsString(s) => s[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:35:12: not found: value JsTrue[0m
+[0m[[0m[31merror[0m] [0m[0mIdentifiers that begin with uppercase are not pattern variables but match the value in scope.[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsTrue => true[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:36:12: not found: value JsFalse[0m
+[0m[[0m[31merror[0m] [0m[0mIdentifiers that begin with uppercase are not pattern variables but match the value in scope.[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsFalse => false[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:37:12: not found: value JsArray[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsArray(elements) => elements.map(read).toList[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:38:12: not found: value JsObject[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsObject(fields) => fields.map { case (name, value) => name -> read(value) }.toMap[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:39:12: not found: value JsNull[0m
+[0m[[0m[31merror[0m] [0m[0mIdentifiers that begin with uppercase are not pattern variables but match the value in scope.[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsNull => null[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:44:66: not found: type RootJsonFormat[0m
+[0m[[0m[31merror[0m] [0m[0m  implicit val mapFormat: RootJsonFormat[Map[String, Any]] = new RootJsonFormat[Map[String, Any]] {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:45:39: not found: type JsValue[0m
+[0m[[0m[31merror[0m] [0m[0m    def write(map: Map[String, Any]): JsValue = JsObject([0m
+[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:45:49: not found: value JsObject[0m
+[0m[[0m[31merror[0m] [0m[0m    def write(map: Map[String, Any]): JsValue = JsObject([0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:49:21: not found: type JsValue[0m
+[0m[[0m[31merror[0m] [0m[0m    def read(value: JsValue): Map[String, Any] = value match {[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:50:12: not found: value JsObject[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsObject(fields) => fields.map { case (key, value) => key -> AnyJsonFormat.read(value) }.toMap[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\JsonFormats.scala:51:23: not found: value DeserializationException[0m
+[0m[[0m[31merror[0m] [0m[0m      case _ => throw DeserializationException("Map expected")[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\repo\bytebrain\employee-service-polyglot\employee-service-scala\src\main\scala\com\example\employeeservice\controller\health\HealthController.scala:61:33: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (akka.http.scaladsl.model.StatusCodes.Success, scala.collection.immutable.Map[String,Object])[0m
+[0m[[0m[31merror[0m] [0m[0m required: akka.http.scaladsl.marshalling.ToResponseMarshallable[0m
+[0m[[0m[31merror[0m] [0m[0m        complete(StatusCodes.OK -> healthData)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m64 errors found[0m

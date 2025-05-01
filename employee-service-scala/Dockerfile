@@ -1,4 +1,4 @@
-FROM sbtscala/scala-sbt:eclipse-temurin-jammy-17.0.6_10_1.9.3_3.3.0 as build
+FROM hseeberger/scala-sbt:11.0.12_1.5.5_2.13.6 as build
 
 WORKDIR /app
 
