@@ -20,8 +20,8 @@ int main() {
     std::string port = getEnv("PORT", "8080");
     LOG_INFO("Server will listen on port " + port);
 
-    // Create Crow app with CORS middleware
-    crow::App<crow::CORSHandler> app;
+    // Create Crow app
+    crow::SimpleApp app;
 
     // Configure routes
     Router::configureRoutes(app);

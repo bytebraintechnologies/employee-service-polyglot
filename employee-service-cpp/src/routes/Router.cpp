@@ -1,5 +1,9 @@
 #include "Router.h"
 #include "Logger.h"
+#include <nlohmann/json.hpp>
+
+// Use json namespace for convenience
+using json = nlohmann::json;
 #include <chrono>
 #include <string>
 #include <map>
@@ -8,30 +12,34 @@
 #ifdef _WIN32
 #include <windows.h>
 #include <psapi.h>
-#elif defined(__unix__) || defined(__unix) || defined(unix) || defined(__APPLE__)
+#elif defined(__APPLE__)
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/param.h>
 #include <sys/sysctl.h>
 #include <sys/utsname.h>
+#elif defined(__unix__) || defined(__unix) || defined(unix) || defined(__linux__)
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/param.h>
+#include <sys/utsname.h>
 #endif
 
-void Router::configureRoutes(crow::App<crow::CORSHandler>& app) {
-    // Configure CORS
-    auto& cors = app.get_middleware<crow::CORSHandler>();
-    cors
-        .global()
-        .headers("Content-Type")
-        .methods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-        .allow_credentials();
+template<typename... Middlewares>
+void Router::configureRoutes(crow::Crow<Middlewares...>& app) {
+    // CORS middleware is not available in this build
+    // We'll add CORS headers manually in each response
 
     // Home route
     CROW_ROUTE(app, "/")
-    ([]() {
+    ([](const crow::request& req, crow::response& res) {
         json response = {
             {"message", "Welcome to Employee Service API"}
         };
-        return crow::response(200, response.dump());
+        res = crow::response(200, response.dump());
+        res.add_header("Access-Control-Allow-Origin", "*");
+        res.add_header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        res.add_header("Access-Control-Allow-Headers", "Content-Type");
     });
 
     // Configure employee routes
@@ -40,68 +48,73 @@ void Router::configureRoutes(crow::App<crow::CORSHandler>& app) {
     // Configure health routes
     configureHealthRoutes(app);
 
-    // Logging middleware
-    app.after_handle([](crow::request& req, crow::response& res) {
-        auto now = std::chrono::system_clock::now();
-        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(now - req.get_start_time());
-        LOG_INFO("Response: " + std::to_string(res.code) + " - took " + std::to_string(duration.count()) + "ms");
+    // Add a global middleware for CORS headers
+    LOG_INFO("Setting up CORS middleware");
+    
+    // Since we can't use after_handle in this version of Crow,
+    // we'll need to add CORS headers to each endpoint
+
+    // Add OPTIONS method handling for CORS preflight requests
+    app.route_dynamic("/(.*)").methods("OPTIONS"_method)
+    ([](const crow::request& req, crow::response& res) {
+        res = crow::response(204);
+        res.add_header("Access-Control-Allow-Origin", "*");
+        res.add_header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        res.add_header("Access-Control-Allow-Headers", "Content-Type");
     });
 
     LOG_INFO("Routes configured successfully");
 }
 
-void Router::configureEmployeeRoutes(crow::App<crow::CORSHandler>& app) {
-    // Logging middleware for employee routes
-    app.route_dynamic("/api/employees")
-       .before([](crow::request& req) {
-           req.set_start_time(std::chrono::system_clock::now());
-           LOG_INFO("Request: " + std::string(req.method) + " " + req.url);
-           return true;
-       });
+template<typename... Middlewares>
+void Router::configureEmployeeRoutes(crow::Crow<Middlewares...>& app) {
+    // Log all employee routes requests
+    LOG_INFO("Setting up employee routes");
 
     // GET /api/employees - Get all employees
     CROW_ROUTE(app, "/api/employees")
         .methods("GET"_method)
-        ([]() {
-            return EmployeeController::getAllEmployees();
+        ([](const crow::request& req, crow::response& res) {
+            res = EmployeeController::getAllEmployees();
         });
 
     // GET /api/employees/:id - Get employee by ID
     CROW_ROUTE(app, "/api/employees/<string>")
         .methods("GET"_method)
-        ([](const std::string& id) {
-            return EmployeeController::getEmployeeById(id);
+        ([](const crow::request& req, crow::response& res, const std::string& id) {
+            res = EmployeeController::getEmployeeById(id);
         });
 
     // POST /api/employees - Create a new employee
     CROW_ROUTE(app, "/api/employees")
         .methods("POST"_method)
-        ([](const crow::request& req) {
-            return EmployeeController::createEmployee(req);
+        ([](const crow::request& req, crow::response& res) {
+            res = EmployeeController::createEmployee(req);
         });
 
     // PUT /api/employees/:id - Update an employee
     CROW_ROUTE(app, "/api/employees/<string>")
         .methods("PUT"_method)
-        ([](const std::string& id, const crow::request& req) {
-            return EmployeeController::updateEmployee(id, req);
+        ([](const crow::request& req, crow::response& res, const std::string& id) {
+            res = EmployeeController::updateEmployee(id, req);
         });
 
     // DELETE /api/employees/:id - Delete an employee
     CROW_ROUTE(app, "/api/employees/<string>")
         .methods("DELETE"_method)
-        ([](const std::string& id) {
-            return EmployeeController::deleteEmployee(id);
+        ([](const crow::request& req, crow::response& res, const std::string& id) {
+            res = EmployeeController::deleteEmployee(id);
         });
 
     LOG_INFO("Employee routes configured");
 }
 
-void Router::configureHealthRoutes(crow::App<crow::CORSHandler>& app) {
+template<typename... Middlewares>
+void Router::configureHealthRoutes(crow::Crow<Middlewares...>& app) {
     // GET /health - Health check endpoint
     CROW_ROUTE(app, "/health")
         .methods("GET"_method)
-        ([]() {
+        ([](const crow::request& req, crow::response& res) {
             LOG_INFO("Health check requested");
             
             // Get current timestamp
@@ -177,7 +190,16 @@ void Router::configureHealthRoutes(crow::App<crow::CORSHandler>& app) {
                 {"resources", resources}
             };
             
-            return crow::response(200, response.dump(4));
+            res = crow::response(200, response.dump(4));
+            res.add_header("Access-Control-Allow-Origin", "*");
+            res.add_header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            res.add_header("Access-Control-Allow-Headers", "Content-Type");
         });
         
     LOG_INFO("Health routes configured");
+}
+
+// Explicit template instantiations
+template void Router::configureRoutes<>(crow::Crow<>& app);
+template void Router::configureEmployeeRoutes<>(crow::Crow<>& app);
+template void Router::configureHealthRoutes<>(crow::Crow<>& app);

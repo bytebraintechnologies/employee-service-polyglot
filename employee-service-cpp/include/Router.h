@@ -9,12 +9,15 @@
 class Router {
 public:
     // Configure all routes for the application
-    static void configureRoutes(crow::App<crow::CORSHandler>& app);
+    template<typename... Middlewares>
+    static void configureRoutes(crow::Crow<Middlewares...>& app);
 
 private:
     // Configure employee routes
-    static void configureEmployeeRoutes(crow::App<crow::CORSHandler>& app);
+    template<typename... Middlewares>
+    static void configureEmployeeRoutes(crow::Crow<Middlewares...>& app);
     
     // Configure health routes
-    static void configureHealthRoutes(crow::App<crow::CORSHandler>& app);
+    template<typename... Middlewares>
+    static void configureHealthRoutes(crow::Crow<Middlewares...>& app);
 };

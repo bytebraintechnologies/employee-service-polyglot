@@ -1,30 +1,20 @@
-FROM hseeberger/scala-sbt:11.0.12_1.5.5_2.13.6 as build
+FROM hseeberger/scala-sbt:11.0.12_1.5.5_2.13.6
 
 WORKDIR /app
 
-# Copy build.sbt and project files
+# Copy only our simplified files
 COPY build.sbt ./
+COPY src/main/resources/ ./src/main/resources/
+COPY src/main/scala/com/example/employeeservice/EmployeeServiceApp.scala ./src/main/scala/com/example/employeeservice/
+
+# Copy project directory (for plugins)
 COPY project ./project
 
-# Copy the source code
-COPY src/ ./src/
-
 # Build the application
-RUN sbt assembly
-
-# Runtime stage
-FROM eclipse-temurin:17-jre-jammy
-
-WORKDIR /app
-
-# Copy the JAR file from the build stage
-COPY --from=build /app/target/scala-*/employee-service-scala-assembly-*.jar app.jar
-
-# Environment variables
-ENV PORT=8089
+RUN sbt compile
 
 # Expose port
-EXPOSE ${PORT}
+EXPOSE 8089
 
 # Command to run the application
-CMD ["java", "-jar", "app.jar"]
+CMD ["sbt", "run"]
