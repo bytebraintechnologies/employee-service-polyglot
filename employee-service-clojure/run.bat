@@ -1,0 +1,3 @@
+@echo off
+echo Starting Employee Service Clojure...
+lein ring server-headless 8087

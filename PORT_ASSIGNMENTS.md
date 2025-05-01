@@ -11,6 +11,9 @@ This document provides the port assignments for the different implementations of
 | Python         | 8082 | http://localhost:8082    | Available   |
 | Rust           | 8083 | http://localhost:8083    | Available   |
 | C++            | 8084 | http://localhost:8084    | Available   |
+| Ruby           | 8085 | http://localhost:8085    | Available   |
+| C#/.NET        | 8086 | http://localhost:8086    | Available   |
+| Clojure        | 8087 | http://localhost:8087    | Available   |
 
 ## Running Multiple Services
 

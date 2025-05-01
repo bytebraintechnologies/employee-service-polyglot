@@ -1,0 +1,11 @@
+# Logfile created on 2025-05-01 09:50:20 +0200 by logger.rb/v1.6.4
+[2025-05-01 09:50:20] INFO: Initialized in-memory employee database with sample data
+[2025-05-01 09:50:20] INFO: Employee Service Ruby started on http://localhost:8085
+[2025-05-01 09:50:30] INFO: GET /
+[2025-05-01 09:50:30] INFO: GET /__sinatra__/404.png
+[2025-05-01 09:50:30] INFO: GET /favicon.ico
+[2025-05-01 09:50:42] INFO: GET /api/employees
+[2025-05-01 09:50:42] INFO: Request to get all employees
+[2025-05-01 09:50:42] INFO: Retrieved 5 employees successfully
+[2025-05-01 09:51:16] INFO: Initialized in-memory employee database with sample data
+[2025-05-01 09:51:16] INFO: Employee Service Ruby started on http://localhost:8085

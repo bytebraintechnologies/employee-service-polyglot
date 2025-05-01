@@ -1,11 +1,14 @@
 # Employee Service Multi-Implementation
 
-This project provides implementations of an Employee CRUD Service with an in-memory database in four different programming languages/frameworks:
+This project provides implementations of an Employee CRUD Service with an in-memory database in several different programming languages/frameworks:
 
 1. Java (Spring Boot)
 2. Node.js (Express)
 3. Python (Flask)
 4. Go (Gin)
+5. Ruby (Sinatra)
+6. C#/.NET (ASP.NET Core)
+7. Clojure (Ring/Compojure)
 
 Each implementation follows similar architecture patterns while leveraging the idiomatic approaches of its respective language.
 
@@ -128,6 +131,9 @@ The choice between these implementations depends on your specific needs:
 - **Node.js**: Great for real-time applications, microservices, and when you need JavaScript across the stack
 - **Python**: Excellent for rapid development, data processing, and when readability is a priority
 - **Go**: Ideal for high-performance services, microservices where concurrency matters, and when memory efficiency is important
+- **Ruby**: Perfect for rapid development, clean syntax, and developer happiness with elegant code
+- **C#/.NET**: Great for Windows-based environments, enterprise applications, and teams familiar with Microsoft technologies
+- **Clojure**: Excellent for functional programming, data processing, and teams looking for a modern Lisp dialect with JVM benefits
 
 Each implementation demonstrates the idiomatic patterns and best practices of its respective language and framework.
 
@@ -139,6 +145,9 @@ Each implementation includes its own Postman collection for testing the API endp
 - Node.js: `Employee_Service_NodeJS_Postman_Collection.json`
 - Python: `Employee_Service_Python_Postman_Collection.json`
 - Go: `Employee_Service_Go_Postman_Collection.json`
+- Ruby: `Employee_Service_Ruby_Postman_Collection.json`
+- C#/.NET: `Employee_Service_CSharp_Postman_Collection.json`
+- Clojure: `Employee_Service_Clojure_Postman_Collection.json`
 
 Import the appropriate collection into Postman to test the corresponding implementation.
 
@@ -150,6 +159,10 @@ root/
 ├── employee-service-nodejs/      # Node.js (Express) implementation
 ├── employee-service-python/      # Python (Flask) implementation
 ├── employee-service-go/          # Go (Gin) implementation
+├── employee-service-ruby/        # Ruby (Sinatra) implementation
+├── employee-service-csharp/      # C#/.NET (ASP.NET Core) implementation
+├── employee-service-clojure/     # Clojure (Ring/Compojure) implementation
+├── PORT_ASSIGNMENTS.md           # Port assignments for each implementation
 └── README.md                     # This file
 ```
 

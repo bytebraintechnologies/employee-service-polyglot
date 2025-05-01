@@ -1,0 +1,3 @@
+@echo off
+echo Building and running Employee Service C#/.NET...
+dotnet run

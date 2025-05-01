@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "7ccG7peoNGfimw3+0/OLapeEvkaHnhw3ZG9SwfhAk+c=",
+  "Source": "employee-service-csharp",
+  "BasePath": "_content/employee-service-csharp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
